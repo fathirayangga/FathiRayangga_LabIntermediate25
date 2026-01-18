@@ -1,0 +1,31 @@
+kata = "brakatak"
+huruf_tertebak = []
+kesempatan = 6 
+print ("GAME HANGMAN ")
+while kesempatan > 0:
+    tampilan = ""
+    for huruf in kata:
+        if huruf in huruf_tertebak:
+            tampilan += huruf + " "
+        else:
+            tampilan += "_"
+    print("\nKata:", tampilan)
+    print("Kesempatan tersisa:", kesempatan)
+    tebakan = input("Tebak satu huruf: ").lower()
+    if tebakan in huruf_tertebak:
+        print("⚠️ Huruf ini sudah pernah ditebak!")
+        continue
+    huruf_tertebak.append(tebakan)
+    kesempatan -= 1
+    menang = True
+    for huruf in kata:
+        if huruf not in huruf_tertebak:
+            menang = False
+            break
+    if menang:
+        print("\n Selamat! Kamu menang!")
+        print("Kata yang ditebak adalah:", kata)
+        break
+    if kesempatan == 0:
+        print("\n Game Over!")
+        print("Kata yang benar adalah:", kata)
