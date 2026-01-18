@@ -13,7 +13,7 @@ while kesempatan > 0:
     print("Kesempatan tersisa:", kesempatan)
     tebakan = input("Tebak satu huruf: ").lower()
     if tebakan in huruf_tertebak:
-        print("⚠️ Huruf ini sudah pernah ditebak!")
+        print(" Huruf ini sudah pernah ditebak!")
         continue
     huruf_tertebak.append(tebakan)
     kesempatan -= 1
